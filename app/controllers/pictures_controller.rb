@@ -25,10 +25,9 @@ class PicturesController < ApplicationController
   def create
     @pictures = Picture.new(pictures_params)  
     @pictures.user_id = current_user.id
-    p @pictures
-    puts("create 진입 세이브 직전")
     if @pictures.save
-      redirect_to pictures_path
+      PictureMailer.picture_mail(@pictures).deliver  ##追記
+      redirect_to pictures_path, notice: 'Contact was successfully created.'
     else
       render 'new'
     end
@@ -60,13 +59,8 @@ class PicturesController < ApplicationController
   end
   
   def list
-    puts("@@@@@@쇼미더머니~~~~~~~~~")
-    #@favorites = current_user.favorite_pictures.find_by(user_id: current_user.id)
     @favorites = Favorite.where(user_id: current_user.id)
-    #@favorites = current_user.favorites.find_by(user_id: current_user.id)
-    #@favorites = Favorite.find_by(user_id: 1)
     p @favorites
-    puts("@@@@@@쇼미더머니~~~~~~~~~22")
   end
   
   
