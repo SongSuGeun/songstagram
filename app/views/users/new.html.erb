@@ -10,11 +10,9 @@
     </ul>
   </div>
 <% end %>
-
-
 <div class ='newusertable'>
 <%= form_with(model: @user, local: true) do |f| %>  
-  <table>
+  <table class ='imageadd'>
     <tr>
       <td><%= f.label :image %></td>
       <td><%= f.file_field :image %></td>

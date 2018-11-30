@@ -1,4 +1,4 @@
-<div class ='newusertable'>
+<div class ='imageadd'>
   <table>
      <tr>
       <td>投稿日</td>
@@ -7,7 +7,7 @@
       <td><%= @pictures.created_at %></th>
     </tr>
     <tr>
-      <th><%= image_tag @pictures.image.url %></th>
+      <td><%= image_tag @pictures.image.url %></td>
     </tr>
     <tr>
       <td><%= @pictures.content %></td>
