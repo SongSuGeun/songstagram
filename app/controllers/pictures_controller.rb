@@ -26,8 +26,8 @@ class PicturesController < ApplicationController
     @pictures = Picture.new(pictures_params)  
     @pictures.user_id = current_user.id
     if @pictures.save
-      PictureMailer.picture_mail(@pictures).deliver  ##追記
-      redirect_to pictures_path, notice: 'Contact was successfully created.'
+      #PictureMailer.picture_mail(@pictures).deliver
+      redirect_to pictures_path
     else
       render 'new'
     end
