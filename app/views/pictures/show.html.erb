@@ -1,0 +1,27 @@
+<div class ='newusertable'>
+  <table>
+     <tr>
+      <td>投稿日</td>
+    </tr>
+    <tr>
+      <td><%= @pictures.created_at %></th>
+    </tr>
+    <tr>
+      <th><%= image_tag @pictures.image.url %></th>
+    </tr>
+    <tr>
+      <td><%= @pictures.content %></td>
+    </tr>
+    <tr>
+    <% unless @pictures.user_id == current_user.id %> 
+      <% if @favorite.present? %>
+        <td><%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %></td>
+      <% else %>
+        <td><%= link_to 'お気に入りする', favorites_path(picture_id: @pictures.id), method: :post, class: 'btn btn-primary' %></td>
+      <% end %>
+    <% end %>
+    </tr>
+  </table>
+  
+  
+</div>

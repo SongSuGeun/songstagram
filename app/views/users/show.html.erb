@@ -1,0 +1,6 @@
+<%= image_tag @user.image.url %>
+<h1><%= @user.name %>のページ</h1><hr>
+<h3>Email : <%= @user.email %></h3>
+<h2>貴方は<%= @user.id %>番目の会員です.</h2>
+<h2>加入日<%= @user.created_at %>.</h2>
+<h3><%= link_to 'お気に入り一覧', list_pictures_path(user_id: current_user.id), class: 'btn btn-danger' %></h3>

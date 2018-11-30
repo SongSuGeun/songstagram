@@ -1,0 +1,232 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+  width:100%;
+  height: 100%;
+  text-align:center;
+}
+
+.container {
+  width:100%;
+  text-align:center;
+  
+}
+  
+ul {
+  margin: auto;
+  padding: auto;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  background-color: #BE81F7;
+  text-align:center;
+  width : 100%;
+  font-size: 1.5rem;
+  font-weight: bold
+}
+
+.savedisplay {
+   width:50%;
+   text-align:right;
+   float:left;
+}
+
+.returndisplay {
+   width:50%;
+   margin-top:32px;
+   text-align:left;
+   float:left;
+}
+
+.saveButton{
+  height: 70px;
+  width : 70px;
+}
+
+.returnButton{
+  height: 70px;
+  width : 70px;
+}
+
+ul.top_menu {
+  float: left;
+}
+
+.top_menu li {
+  float: left;
+  width: auto;
+}
+
+.top_menu li a {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font:black;
+  display: block;
+  padding: 15px;
+}
+
+.top_menu li a:hover {
+  text-decoration: underline;
+}
+
+.logo_image {
+  width: 110px;
+  float: left;
+  margin: 0;
+}
+
+.wrapper{
+  position:relative;
+  text-align:center;
+}
+
+.content{
+  min-height:100%;
+  background-color: white;
+  text-align:center;
+}
+
+.content p {
+  margin-top:10px;
+  text-align:center;
+  font-size:17px;
+}
+
+.content .plus{
+  text-align:center;
+  font-size:32px;
+  color: red;
+}
+
+.content .sitakaki {
+  text-align:center;
+  font-size:30px;
+  font-weight: bold ;
+  color: red;
+}
+
+.banner_content {
+  margin-top: 15px;
+  display: table;
+}
+
+.banner_content p {
+  display: table-cell;
+}
+
+.banner_content p img {
+  width: 100%;
+}
+
+.side_menu .point{
+  background-color: #4ADE74;
+}
+
+.side_menu .point a{
+  color: #4D4D4D;
+}
+
+
+.contactimg {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mainimage {
+  margin-top:50px;
+  height :80%;
+  width :80%;
+}
+
+.errorM h2{
+  color:red;
+  font-size:40px;
+}
+
+
+.errorM ul li{
+  color:red;
+  font-size:40px;
+}
+
+.noticeM{
+  color:red;
+  font-size:40px;
+}
+
+.row{
+  margin:auto;
+  text-align: center;
+}
+
+.show_table {
+  width:100%;
+  font-weight: bold ;
+  font-size:15px;
+  text-align:center;
+  background:#E6E6E6;
+}
+
+.write_bird {
+  margin-top:50px;
+  font-size:18px;
+  text-align:center;
+}
+
+.show_table_honbunTH {
+  width:300px;
+  height:25px;
+  text-align:center;
+  background:#E6E6E6;
+}
+
+.navbar-default{
+  background:#4ADE74;
+  border-color: #4ADE74;
+}
+
+.birdscontent th {
+  text-align:center;
+}
+
+.uploadbutton {
+  text-align:center;
+}
+
+.newusertable {
+  background:gray;
+  text-align:center;
+  height:100%;
+  margin-left:0;
+   margin-right:0;
+  width:100%;
+  position:center;
+}
+
+a:hover, a:focus {   animation-duration: 3s; animation-name: rainbowLink; animation-iteration-count: infinite; }
+@keyframes rainbowLink {
+   0% { color: #ff2a2a; }
+   15% { color: #ff7a2a; }
+   30% { color: #ffc52a }
+   45% { color: #43ff2a; }
+   60% { color: #2a89ff; }
+   75% { color: #202082; }
+   90% { color: #6b2aff; }
+   100% { color: #e82aff; }
+}
+
+.imageadd {
+  width:100%;
+  height:100%;
+  text-align:center;
+  margin-left:0;
+  margin-right:0;
+}

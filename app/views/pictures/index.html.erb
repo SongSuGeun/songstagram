@@ -1,0 +1,35 @@
+<% if @pictures.present? %>
+<% @pictures.each do |picture| %>
+  <div class="col-sm-6 col-md-3 col-xs-12">
+    <table>
+      <tr>
+        <td class= 'show_table_honbunTH'  colspan='2'>作成者</td>
+      </tr>
+      <tr>
+        <td colspan='2'><%= picture.user.name %></td>
+      </tr>
+      <tr class ="birdscontent">
+        <% if picture.image != nil %> 
+          <th  colspan='2'><%= image_tag (picture.image) %></th>
+        <% end %>    
+      </tr>
+      <tr>
+        <th class= 'show_table_honbunTH' , colspan='2'>内容</th>
+      </tr>
+      <tr>
+        <td colspan='2'><%= link_to picture.content , picture_path(picture.id) %></td>
+      </tr>
+      <% if current_user.present? %>
+        <% if picture.user_id == current_user.id %>
+          <tr class ="buttonimageclass">
+            <td colspan='1'><%= link_to '編集' , edit_picture_path(id: picture.id), data:{confirm: "本当に編集しますか"} %></td>
+            <td colspan='1'><%= link_to '削除' , picture_path(picture.id), method: :delete, data:{confirm: "本当に削除しますか"} %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+<% else %>
+  <h1>掲示物がありません、投稿してください。</h1>
+<% end %>

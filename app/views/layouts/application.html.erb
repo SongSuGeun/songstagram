@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Songstagram</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <nav class="navbar navbar-default">
+    <marquee behavior="alternate" direction="up" width="670" height="70"  scrollamount="8"><marquee behavior="alternate" scrollamount="4">ようこそ、SONGSTAGRAMへ　＾＿＾</marquee></marquee>  
+    <div>
+      <ul >
+        <li><%= link_to 'HOME','/'%></li>
+        <% if logged_in? %>
+          <li><%= link_to "Profile", user_path(current_user.id) %></li>
+          <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
+        <% else %>
+         <li><%= link_to "Sign up", new_user_path %></li>
+         <li><%= link_to "Login", new_session_path %></li>
+       <% end %>
+         <li><%= link_to 'Songsta作成','/pictures/new'%></li>
+         <li><%= link_to 'GotoSongstagram','https://www.instagram.com/92_songsugeun/' %></li>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    
+    
+    <%= yield %>
+    
+  </body>
+</html>

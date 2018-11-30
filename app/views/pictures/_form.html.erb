@@ -1,0 +1,18 @@
+<%= form_with(model: @pictures, url: choose_new_or_edit, local: true) do |f| %>  
+  <table class ='imageadd'>
+    <tr>
+      <td><%= image_tag(@pictures.image.url) if @pictures.image.url %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :image %></td>
+      <td><%= f.file_field :image %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :content %></td>
+      <td><%= f.text_field :content %></td>
+    </tr>
+    <tr>
+      <td colspan ='2'><%= f.submit "登録" %></td>
+    </tr>
+  </table>
+<% end %>

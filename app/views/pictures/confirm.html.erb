@@ -1,0 +1,25 @@
+<h1>確認画面</h1>
+<div class ='newusertable'>
+<%= form_with(model: @pictures, url: pictures_path, local: true) do |f| %>  
+  <table>
+    <tr>
+      <td><%= image_tag (@pictures.image.url) %></td>
+      <td><%= f.hidden_field :image, value: @pictures.image %></td>
+      <td><%= f.hidden_field :image_cache %></td>
+    </tr>
+    <tr>
+      <td><%= @pictures.content %></td>
+      <td><%= f.hidden_field :content, value: @pictures.content %></td>
+    </tr>
+    <tr>
+      <td colspan ='2'><%= f.submit "登録" %></td>
+    </tr>
+  </table>
+<% end %>
+</div>
+
+<%= form_with(model: @pictures, url: new_picture_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :image_cache %> 
+  <%= form.hidden_field :content %>
+  <%= form.submit "back up", name: 'back' %>
+<% end %> 
