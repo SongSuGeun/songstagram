@@ -34,7 +34,7 @@ class PicturesController < ApplicationController
       end
     else
       flash[:notice] = "投稿権限がありません"
-      redirect_to("/posts/index")
+      redirect_to pictures_path  
     end
   end
 
@@ -55,11 +55,17 @@ class PicturesController < ApplicationController
  
   def update
     p @pictures
-    if @pictures.update(pictures_params)
-      redirect_to pictures_path, notice:'insta修正完了。'
+    if @pictures.user_id == current_user.id
+      if @pictures.update(pictures_params)
+        redirect_to pictures_path, notice:'insta修正完了。'
+      else
+        render :edit  if @pictures.invalid?
+      end 
     else
-      render :edit  if @pictures.invalid?
-    end 
+      flash[:notice] = "投稿編集の権限がありません"
+      redirect_to pictures_path
+    end
+    
   end
   
   def list
