@@ -25,13 +25,19 @@ class PicturesController < ApplicationController
   def create
     @pictures = Picture.new(pictures_params)  
     @pictures.user_id = current_user.id
-    if @pictures.save
-      #PictureMailer.picture_mail(@pictures).deliver
-      redirect_to pictures_path
+    if @pictures.user_id == current_user.id
+      if @pictures.save
+        #PictureMailer.picture_mail(@pictures).deliver
+        redirect_to pictures_path
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      flash[:notice] = "投稿権限がありません"
+      redirect_to("/posts/index")
     end
   end
+
 
   def show 
     p @pictures
@@ -48,8 +54,6 @@ class PicturesController < ApplicationController
   end
  
   def update
-
-    #@pictures = Pictures.find()
     p @pictures
     if @pictures.update(pictures_params)
       redirect_to pictures_path, notice:'insta修正完了。'

@@ -3,4 +3,6 @@
 <h3>Email : <%= @user.email %></h3>
 <h2>貴方は<%= @user.id %>番目の会員です.</h2>
 <h2>加入日<%= @user.created_at %>.</h2>
+
+<h3><%= link_to 'ユーザ情報編集', edit_user_path, class: 'btn btn-danger' %></h3> 
 <h3><%= link_to 'お気に入り一覧', list_pictures_path , class: 'btn btn-danger' %></h3>
