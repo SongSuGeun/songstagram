@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   
   def new
+    puts("@@@@@@@@@@@")
     @user = User.new
+    p @user
   end
     
   def create

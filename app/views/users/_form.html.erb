@@ -12,7 +12,10 @@
 <%= form_with(model: @user, local: true) do |f| %>  
   <table class ='imageadd'>
     <tr>
-        <% if @user.image != nil %>
+        <% if @user.image.blank? %>
+          <td><%= f.label :image %></td>
+          <td><%= f.file_field :image %></td>
+        <% else %>
         <tr>
           <td colspan='2'><%= image_tag (@user.image.url) %></td>
         </tr>
@@ -20,33 +23,30 @@
           <td><%= f.label :image %></td>
           <td><%= f.file_field :image %></td>
         </tr>
-        <% else %>
-          <td><%= f.label :image %></td>
-          <td><%= f.file_field :image %></td>
         <% end %>
     </tr>
     <tr>
       <td><%= f.label :name %></td>
-      <% if @user.name != nil%>
-        <td><%= f.text_field :name, value: @user.name %></td>
-      <% else %>
+      <% if @user.name.blank?%>
         <td><%= f.text_field :name %></td>
+      <% else %>
+        <td><%= f.text_field :name, value: @user.name %></td>
       <% end %>
     </tr>
     <tr>
       <td><%= f.label :email %></td>
-      <% if @user.email != nil %>
-        <td><%= f.email_field :email, :readonly => true ,value: @user.email %>IDは変更ｘ</td>
-      <% else %>
+      <% if @user.email.blank? %>
         <td><%= f.email_field :email %></td>
+      <% else %>
+        <td><%= f.email_field :email, :readonly => true ,value: @user.email %>IDは変更ｘ</td>
       <% end %>
     </tr>
     <tr>
       <td><%= f.label :password %></td>
-      <% if @user.password != nil %>
-        <td><%= f.hidden_field :password, value: @user.password %></td>
-      <% else %>
+      <% if @user.password.blank? %>
         <td><%= f.password_field :password %></td>
+      <% else %>
+        <td><%= f.hidden_field :password, value: @user.password %></td>
       <% end %>
     </tr>
     <tr>
