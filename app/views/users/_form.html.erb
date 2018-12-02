@@ -8,7 +8,6 @@
     </ul>
   </div>
 <% end %>
-
 <div class ='newusertable'>
 <%= form_with(model: @user, local: true) do |f| %>  
   <table class ='imageadd'>
@@ -24,12 +23,15 @@
         <% else %>
           <td><%= f.label :image %></td>
           <td><%= f.file_field :image %></td>
-          <td><%= f.hidden_field :image %></td>
         <% end %>
     </tr>
     <tr>
       <td><%= f.label :name %></td>
-      <td><%= f.text_field :name %></td>
+      <% if @user.name != nil%>
+        <td><%= f.text_field :name, value: @user.name %></td>
+      <% else %>
+        <td><%= f.text_field :name %></td>
+      <% end %>
     </tr>
     <tr>
       <td><%= f.label :email %></td>
