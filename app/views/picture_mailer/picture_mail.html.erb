@@ -1,9 +1,9 @@
-<h1>お問い合わせが完了しました！</h1>
+<h1>お問い合わせが正常に完了しました！</h1>
 
 <h4>name: <%= @pictures.user.name %></h4>
 <hr>
-<h4>お問い合わせ内容の確認</h4>
-
-<p>name: <%= image_tag @pictures.image.url %></p>
+<h4><%= @pictures.user.email %>さんの投稿内容の確認</h4>
+<p>name: <%= @pictures.user.name %></p>
+<p>email: <%= image_tag @pictures.image.url %></p>
 
 <p>content: <%= @pictures.content %></p>
