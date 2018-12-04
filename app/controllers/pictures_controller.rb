@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
     @pictures.user_id = current_user.id
     if @pictures.user_id == current_user.id
       if @pictures.save
-        PictureMailer.picture_mail(@pictures).deliver
+        #PictureMailer.picture_mail(@pictures).deliver
         redirect_to pictures_path
       else
         render 'new'
